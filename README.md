@@ -34,7 +34,7 @@ For chat-only use, that is all you need.
 
 ![Screenshot of the chat based emergency alert](https://imgur.com/CV4moUn.png)
 
-[OPTIONAL] 4. Drop bs-eas.sql into your SQL database. (This is for those of you who want to use Quasar smartphone for your alerts.)
+[OPTIONAL] 4. Drop `bs-eas.sql` into your SQL database. (This is for those of you who want to use Quasar smartphone for your alerts.)
 
 > [!TIP]
 > The custom alert icons show up in the EAS tablet, but will not show in chat message alerts. They were put in for Quasar Phone to display but obviously if you don't have Quasar phone, you can only use the chat alert feature.
