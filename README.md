@@ -2,6 +2,8 @@
 
 A standalone Emergency Alert System for FiveM with configurable alert templates, geographic targeting, optional Quasar Smartphone integration, persistent phone alert history, and automatic chat fallback.
 
+![Screenshot of bs-eas UI to publish emergency alerts](https://imgur.com/CthsC2L.png)
+
 ## Features
 
 - Standalone — no QBCore/ESX dependency
@@ -15,6 +17,9 @@ A standalone Emergency Alert System for FiveM with configurable alert templates,
 - Placeholder values persist between updates and render in uppercase
 - Optional critical EAS tone
 
+> [!NOTE]
+> Please note that pre-made templates in this script have been included for Night's Natural Disasters. You can remove them if you won't be needing them but I figured I'd leave them in so you know how to structure warning templates.
+
 ## Installation
 
 1. Drop `bs-eas` into your resources folder.
@@ -26,6 +31,13 @@ ensure bs-eas
 ```
 
 For chat-only use, that is all you need.
+
+![Screenshot of the chat based emergency alert](https://imgur.com/CV4moUn.png)
+
+[OPTIONAL] 4. Drop bs-eas.sql into your SQL database. (This is for those of you who want to use Quasar smartphone for your alerts.)
+
+> [!TIP]
+> The custom alert icons show up in the EAS tablet, but will not show in chat message alerts. They were put in for Quasar Phone to display but obviously if you don't have Quasar phone, you can only use the chat alert feature.
 
 ### Quasar Smartphone
 
@@ -61,6 +73,9 @@ The app ID must match:
 ```lua
 Config.Quasar.AppId = 'emergency_alerts'
 ```
+
+![Screenshot of the Quasar phone alert app with an alert active](https://imgur.com/E5DLb3w.png)
+
 > [!NOTE]
 > To get the app icon to work on Quasar's smartphone, follow the file path in `app icon path` and drop the `emergency_alerts.webp` image file in the apps icons path in your Quasar phone resource pathway.
 

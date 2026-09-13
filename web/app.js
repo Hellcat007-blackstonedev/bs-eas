@@ -138,11 +138,25 @@ function card(alert) {
     `;
 }
 
+function resolveResourceName() {
+    // When this page is embedded inside another resource (for example
+    // qs-smartphone), GetParentResourceName() can resolve to the host resource
+    // instead of bs-EAS. Prefer the resource name from this iframe's own
+    // cfx-nui hostname so renamed copies such as bs-eas-public work correctly.
+    const host = String(window.location.hostname || '');
+    if (host.startsWith('cfx-nui-')) {
+        return host.substring('cfx-nui-'.length);
+    }
+
+    if (typeof GetParentResourceName === 'function') {
+        return GetParentResourceName();
+    }
+
+    return 'bs-eas';
+}
+
 async function load() {
-    const resourceName =
-        typeof GetParentResourceName === 'function'
-            ? GetParentResourceName()
-            : 'bs-eas';
+    const resourceName = resolveResourceName();
 
     try {
         const response = await fetch(

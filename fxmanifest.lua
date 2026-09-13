@@ -5,7 +5,7 @@ lua54 'yes'
 
 author 'Blackstone Development'
 description 'Emergency Alert System for FiveM featuring targeted alerts, phone integration, and chat fallback.'
-version '20.0.0'
+version '20.0.1'
 
 ui_page 'web/composer.html'
 
