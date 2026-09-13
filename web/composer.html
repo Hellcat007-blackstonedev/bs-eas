@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="composer.css"></head>
+<body><div id="overlay" class="overlay hidden"><div class="tablet">
+<header><div class="brand"><b>!</b><div><h1 id="brandTitle">Emergency Alert System</h1><small id="brandSubtitle">Authorised Communications Console</small></div></div><button id="close">×</button></header>
+<nav><button data-tab="create" class="active">Create Alert</button><button data-tab="active">Active Alerts</button><button data-tab="history">History</button></nav>
+<main><aside><label id="sideTitle">ALERT SUBJECTS</label><div id="sideList"></div></aside>
+<section><div id="empty" class="empty hidden">Select an alert from the left.</div><div id="editor">
+<div class="grid">
+<div class="field"><label>Issuing Authority</label><select id="issuer"></select></div>
+<div class="field"><label>Alert Level</label><select id="level"><option value="advice">Advice — Blue</option><option value="warning">Warning — Orange</option><option value="emergency">Emergency Warning — Red</option></select></div>
+<div id="zonesField" class="field full hidden"><label>Affected Delivery Areas <span>Select one or more</span></label><div id="zones" class="zones"></div></div>
+<div id="detailsField" class="detailsField full hidden"><label class="detailsTitle">Incident Details <span>Saved with this incident</span></label><div id="details" class="detailsGrid"></div></div>
+<div class="field full"><label>Headline <span id="hc"></span></label><input id="headline"></div>
+<div class="tone full"><div><strong>Play Critical Tone</strong><small>Only available for Emergency Warning alerts.</small></div><label class="switch"><input id="tone" type="checkbox"><span></span></label></div>
+<div class="field full"><label>Alert Message <span id="mc"></span></label><textarea id="message"></textarea><small id="messageHelp" class="messageHelp hidden">Generated from the configured template and the incident details above.</small></div>
+</div>
+<label class="previewLabel">LIVE PREVIEW</label>
+<div id="preview" class="preview emergency"><b id="ptype">EMERGENCY ALERT</b><div class="previewMain"><div id="previewIcon" class="previewIcon"><span class="hazard-mask" style="--hazard-icon:url('icons/generic.svg')"></span></div><div class="previewCopy"><h2 id="ph">Alert headline</h2><p id="pm"></p></div></div><footer><span id="pi"></span><span id="pl"></span></footer><div id="pz" class="previewZones hidden"></div></div>
+<div id="managementHistory" class="managementHistory hidden"></div><div class="actions"><button id="remove" class="remove hidden">Remove From App</button><button id="reactivate" class="orange hidden">Reactivate Alert</button><button id="allclear" class="green hidden">Issue All Clear</button><button id="cancel">Cancel</button><button id="send" class="red">Broadcast Alert</button></div>
+</div></section></main></div></div><script src="composer.js"></script></body></html>

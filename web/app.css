@@ -1,0 +1,130 @@
+*{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#f2f3f5;color:#161616}.app{padding:max(46px,env(safe-area-inset-top)) 14px calc(26px + env(safe-area-inset-bottom))}.app-header{display:flex;align-items:center;gap:11px;margin-bottom:20px}.warning-icon{width:42px;height:42px;border-radius:12px;background:#d71920;color:#fff;display:grid;place-items:center;font-size:29px;font-weight:900}.app-header h1{margin:0;font-size:20px}.app-header p{margin:4px 0 0;font-size:11px;color:#737780}.section-label{margin:17px 3px 8px;font-size:10px;font-weight:800;letter-spacing:.11em;color:#687386}.alert-card{overflow:hidden;background:#fff;border-radius:15px;margin-bottom:11px;box-shadow:0 1px 6px #0000001a;border-left:5px solid #2878d0}.alert-card.warning{border-left-color:#f28c18}.alert-card.emergency{border-left-color:#d71920}.alert-card.all_clear{border-left-color:#2e9b59}.alert-content{padding:13px}.alert-type{font-size:10px;font-weight:850;color:#2878d0;letter-spacing:.06em;margin-bottom:6px}.warning .alert-type{color:#d97400}.emergency .alert-type{color:#d71920}.all_clear .alert-type{color:#2e9b59}.alert-card h2{margin:0 0 8px;font-size:16px}.alert-message{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;line-height:1.48;color:#41444a}.alert-footer{margin-top:12px;padding-top:10px;border-top:1px solid #eceef1}.issuer{font-size:11px;font-weight:700}.time{font-size:10px;color:#858b94;margin-top:3px}.empty{padding:20px 14px;background:#fff;border-radius:15px;text-align:center;color:#888d95;font-size:12px}
+.alert-zones{font-size:10px;font-weight:700;color:#646b75;margin-top:10px}
+
+
+
+/* =========================================================
+   v15 - compact alert layout + SVG hazard icons
+   ========================================================= */
+.alert-main{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+}
+.alert-icon{
+    flex:0 0 52px;
+    width:52px;
+    height:52px;
+    display:grid;
+    place-items:center;
+    color:#2878d0;
+    margin-top:1px;
+}
+.alert-card.warning .alert-icon{color:#f28c18}
+.alert-card.emergency .alert-icon{color:#d71920}
+.alert-card.all_clear .alert-icon{color:#2e9b59}
+
+.alert-copy{
+    min-width:0;
+    flex:1;
+}
+.alert-card h2{
+    margin:0 0 6px;
+    font-size:16px;
+}
+.alert-message{
+    margin:0;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    font-size:13px;
+    line-height:1.42;
+    color:#41444a;
+}
+.incident-history{
+    margin-top:12px;
+    padding-top:10px;
+    border-top:1px solid #eceef1;
+}
+.incident-history summary{
+    cursor:pointer;
+    user-select:none;
+    font-size:11px;
+    font-weight:750;
+    color:#535b66;
+}
+.incident-history-list{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    margin-top:10px;
+}
+.incident-history-item{
+    display:flex;
+    gap:8px;
+    padding:9px 9px;
+    border-left:3px solid #2878d0;
+    border-radius:7px;
+    background:#f4f5f7;
+    color:#2878d0;
+}
+.incident-history-item.warning{border-left-color:#f28c18;color:#f28c18}
+.incident-history-item.emergency{border-left-color:#d71920;color:#d71920}
+.incident-history-item.all_clear{border-left-color:#2e9b59;color:#2e9b59}
+.incident-history-icon{
+    flex:0 0 32px;
+    width:32px;
+    height:32px;
+}
+
+.incident-history-copy{
+    flex:1;
+    min-width:0;
+    color:#555b63;
+}
+.incident-history-meta{
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+    margin-bottom:5px;
+    font-size:9px;
+    color:#737a84;
+}
+.incident-history-meta strong{color:#4b525b}
+.incident-history-headline{
+    font-size:11px;
+    font-weight:750;
+    color:#282c31;
+}
+.incident-history-message{
+    margin-top:4px;
+    font-size:10px;
+    line-height:1.35;
+    color:#555b63;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+}
+.incident-history-issuer{
+    margin-top:5px;
+    font-size:9px;
+    color:#858b94;
+}
+
+/* v15.1 - user-authored SVG mask rendering */
+.hazard-mask {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: currentColor;
+    -webkit-mask-image: var(--hazard-icon);
+    mask-image: var(--hazard-icon);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+.alert-icon,
+.incident-history-icon {
+    overflow: visible;
+}
